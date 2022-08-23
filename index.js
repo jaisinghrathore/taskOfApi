@@ -16,7 +16,7 @@ const apicall = async () => {
         }
     }
 
-    //First Task
+    //First and sexond Task
     const firstSecondTask = sortedData.map((val) => {
         return { title: val.title, price: val.price };
     });
@@ -26,7 +26,13 @@ const apicall = async () => {
     const thirdTask = data.filter((val) => {
         return val.stock >= 50;
     });
-    console.log(thirdTask);
+    //console.log(thirdTask);
+
+    //homework bonus task
+    const homework = data.filter((val) => {
+        return val.rating >= 4.5 && val.brand.toLowerCase() === "apple";
+    });
+    console.log(homework);
 };
 
 apicall();
