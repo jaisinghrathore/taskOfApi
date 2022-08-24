@@ -35,21 +35,29 @@ function dom(val, callback) {
     });
 }
 
-async function api(rmStaleData) {
-    const response = await fetch("https://dummyjson.com/products");
+async function api(...callback) {
+    console.log(callback);
+    const response = await fetch(
+        `https://dummyjson.com/products${
+            callback.length == 2 ? "?limit=" + callback[0] : ""
+        }`
+    );
     const data = await response.json();
-    rmStaleData();
+    if (callback.length == 1) {
+        callback[0]();
+    } else {
+        callback[1]();
+    }
     return data;
 }
 
 function apicall() {
     this.first_second = function (response) {
-        response(removeStaleData)
+        response(10, removeStaleData)
             .then((data) => {
                 return data;
             })
             .then(({ products }) => {
-                products = products.slice(0, 10);
                 // for sorting
                 for (let i = 0; i < products.length; i++) {
                     for (let j = i + 1; j < products.length; j++) {
