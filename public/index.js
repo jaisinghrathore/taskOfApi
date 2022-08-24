@@ -43,8 +43,8 @@ async function api(rmStaleData) {
 }
 
 function apicall() {
-    this.first_second = function (response, rmStaleData) {
-        response(rmStaleData)
+    this.first_second = function (response) {
+        response(removeStaleData)
             .then((data) => {
                 return data;
             })
@@ -75,8 +75,8 @@ function apicall() {
             });
     };
 
-    this.third = function (response, rmStaleData) {
-        response(rmStaleData)
+    this.third = function (response) {
+        response(removeStaleData)
             .then((data) => {
                 return data;
             })
@@ -92,8 +92,8 @@ function apicall() {
             });
     };
 
-    this.Homework = function (response, rmStaleData) {
-        response(rmStaleData)
+    this.Homework = function (response) {
+        response(removeStaleData)
             .then((data) => {
                 return data;
             })
