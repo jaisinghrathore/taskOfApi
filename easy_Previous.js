@@ -29,9 +29,9 @@ const apicall = async () => {
     //console.log(thirdTask);
 
     //homework bonus task
-    const homework = data.filter((val) => {
-        return val.rating >= 4.5 && val.brand.toLowerCase() === "apple";
-    });
+        const homework = data.filter((val) => {
+            return val.rating >= 4.5 && val.brand.toLowerCase() === "apple";
+        });
     console.log(homework);
 };
 
